@@ -10,7 +10,6 @@ A scalable template for building REST APIs in Rust, using:
 - web-push: push notifications for browsers
 - utoipa: OpenAPI documentation generation
 
----
 
 ## Features
 
@@ -24,33 +23,6 @@ A scalable template for building REST APIs in Rust, using:
   - External API consumption
   - Push notifications using Web Push
 
----
-
-## Project Structure
-
-src/
-├── controllers/      # Route handlers logic
-├── models/           # Schemas and structs
-├── routes/           # Public and protected route definitions
-
----
-
-## Main Dependencies
-
-[dependencies]
-axum = { version = "0.8", features = ["macros", "multipart"] }
-diesel = { version = "2", features = ["postgres", "serde_json", "uuid", "chrono"] }
-diesel-async = { version = "0.5", features = ["postgres", "tokio", "deadpool"] }
-jsonwebtoken = "9"
-serde = { version = "1", features = ["derive"] }
-validator = { version = "0.20", features = ["derive"] }
-reqwest = { version = "0.12", features = ["multipart", "json"] }
-web-push = { version = "0.11", features = ["hyper-client"] }
-utoipa = "2"
-tokio = { version = "1", features = ["full"] }
-
----
-
 ## Requirements
 
 - Rust (stable)
@@ -61,7 +33,6 @@ Install Diesel CLI:
 
 cargo install diesel_cli --no-default-features --features postgres
 
----
 
 ## .env Configuration
 
@@ -71,24 +42,20 @@ DATABASE_URL=postgres://username:password@localhost/database_name
 JWT_SECRET=your_super_secret_key
 FRONTEND_URL=http://localhost:3000
 
----
 
 ## Running the Project
 
-`cargo run`
-
----
+```cargo run```
 
 ## API Documentation (Swagger UI)
 
 After running the server, access the interactive documentation at:
-`http://localhost:3099/docs`
+```http://localhost:3099/docs```
 
 ## Contributing
 
 Contributions are welcome! Feel free to open issues or PRs.
 
----
 
 ## Author
 

@@ -1,0 +1,50 @@
+[package]
+name = "Rust-Backend-Template"
+version = "0.1.0"
+edition = "2024"
+authors = ["HadsonRamalho"]
+
+[dependencies]
+axum = { version = "0.8.4", features = ["macros", "multipart"] }
+chrono = { version = "0.4.40", features = ["serde"] }
+diesel = { version = "2.2.9", features = [
+    "postgres",
+    "chrono",
+    "numeric",
+    "serde_json",
+    "uuid",
+] }
+pq-sys = { version = "0.6", features = ["bundled"] }
+openssl-sys = { version = "0.9.100", features = ["vendored"] }
+serde = { version = "1.0.219", features = ["derive"] }
+rand = "0.8.5"
+hyper = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+dotenvy = "0.15"
+tower-http = { version = "0.6.1", features = ["cors", "fs"] }
+validator = { version = "0.20", features = ["derive"] }
+dotenv = "0.15.0"
+pwhash = "1"
+lettre = "0.11.7"
+thiserror = "1.0"
+tokio = { version = "1", features = ["full", "macros", "rt-multi-thread"] }
+jsonwebtoken = "9.3.1"
+serde_json = "1.0.140"
+bigdecimal = { version = "0.4.8", features = ["serde"] }
+reqwest = { version = "0.12.15", features = ["multipart", "json"] }
+diesel-async = { version = "0.5.2", features = [
+    "postgres",
+    "tokio",
+    "deadpool",
+] }
+futures-util = "0.3.31"
+rustls = "0.23.28"
+rustls-platform-verifier = "0.6.0"
+tokio-postgres-rustls = "0.13.0"
+tokio-postgres = "0.7.13"
+web-push = { version = "0.11.0", features = ["hyper-client"] }
+uuid = { version = "1.18.0", features = ["v4", "serde"] }
+utoipa = "5.4.0"
+utoipa-axum = "0.2.0"
+utoipa-swagger-ui = { version = "9.0.2", features = ["axum"] }

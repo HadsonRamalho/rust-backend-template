@@ -31,8 +31,12 @@ A scalable template for building REST APIs in Rust, using:
 
 Install Diesel CLI:
 
+```
 cargo install diesel_cli --no-default-features --features postgres
+```
+or
 
+https://diesel.rs/guides/getting-started
 
 ## .env Configuration
 

@@ -50,6 +50,8 @@ FRONTEND_URL=http://localhost:3000
 ## Running the Project
 
 ```
+diesel setup
+
 cargo run
 ```
 

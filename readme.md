@@ -38,9 +38,13 @@ cargo install diesel_cli --no-default-features --features postgres
 
 Create a `.env` file in the root with:
 
+```
 DATABASE_URL=postgres://username:password@localhost/database_name
+
 JWT_SECRET=your_super_secret_key
+
 FRONTEND_URL=http://localhost:3000
+```
 
 
 ## Running the Project

@@ -49,12 +49,16 @@ FRONTEND_URL=http://localhost:3000
 
 ## Running the Project
 
-```cargo run```
+```
+cargo run
+```
 
 ## API Documentation (Swagger UI)
 
 After running the server, access the interactive documentation at:
-```http://localhost:3099/docs```
+```
+http://localhost:3099/docs
+```
 
 ## Contributing
 

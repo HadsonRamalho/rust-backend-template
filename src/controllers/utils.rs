@@ -8,7 +8,7 @@ use rand::Rng;
 
 use crate::models::error::ApiError;
 
-pub fn validar_cpf(cpf: &str) -> bool {
+pub fn validate_cpf(cpf: &str) -> bool {
     let cpf: Vec<u8> = cpf
         .chars()
         .filter(|c| c.is_digit(10))
@@ -40,7 +40,7 @@ pub fn validar_cpf(cpf: &str) -> bool {
     cpf[9] == dig1 as u8 && cpf[10] == dig2 as u8
 }
 
-pub fn validar_cnpj(cnpj: &str) -> bool {
+pub fn validate_cnpj(cnpj: &str) -> bool {
     let cnpj: Vec<u8> = cnpj
         .chars()
         .filter(|c| c.is_digit(10))
@@ -70,7 +70,7 @@ pub fn validar_cnpj(cnpj: &str) -> bool {
     cnpj[12] == d1 && cnpj[13] == d2
 }
 
-pub fn formata_cnpj(cnpj: &str) -> Result<String, String> {
+pub fn format_cnpj(cnpj: &str) -> Result<String, String> {
     let cnpj_numeros: Vec<char> = cnpj.chars().filter(|c: &char| c.is_ascii_digit()).collect();
     if cnpj_numeros.len() != 14 {
         return Err("Invalid CNPJ length".to_string());
@@ -87,7 +87,7 @@ pub fn formata_cnpj(cnpj: &str) -> Result<String, String> {
     Ok(cnpjfinal)
 }
 
-pub fn formata_cpf(cpf: &str) -> Result<String, String> {
+pub fn format_cpf(cpf: &str) -> Result<String, String> {
     let cpf: Vec<char> = cpf.chars().filter(|c: &char| c.is_digit(10)).collect();
     if cpf.len() != 11 {
         return Err("Invalid CPF length".to_string());
@@ -104,10 +104,10 @@ pub fn formata_cpf(cpf: &str) -> Result<String, String> {
 }
 
 pub fn format_document(documento_: &str) -> Result<String, String> {
-    if let Ok(cpf) = formata_cpf(documento_) {
+    if let Ok(cpf) = format_cpf(documento_) {
         return Ok(cpf);
     }
-    if let Ok(cnpj) = formata_cnpj(documento_) {
+    if let Ok(cnpj) = format_cnpj(documento_) {
         return Ok(cnpj);
     }
     Err("Invalid document".to_string())
